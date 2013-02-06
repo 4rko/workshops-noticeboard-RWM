@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WorkshopsNoticeboard</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Noticeboard</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        <% if signed_in? %>
+          You're signed in as <%= current_user.name %>, (<%= current_user.email %>) <br/>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br/>
+          <%= link_to "New post", new_post_path %>
+        <% else %>
+          <%= link_to "Sign in", user_omniauth_authorize_path(:facebook) %>
+        <% end %>
+      </p>
+    </div>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
 </html>

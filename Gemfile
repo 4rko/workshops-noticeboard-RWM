@@ -22,6 +22,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'nifty-generators', group: :development
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -36,3 +38,13 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test
+
+gem 'geocoder'
+
+gem 'acts-as-taggable-on'
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
