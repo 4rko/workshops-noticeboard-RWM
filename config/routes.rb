@@ -6,7 +6,9 @@ WorkshopsNoticeboard::Application.routes.draw do
     delete  'sign_out', to: 'devise/sessions#destroy',  as: :destroy_user_session
   end
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   root to: 'posts#index'
 
