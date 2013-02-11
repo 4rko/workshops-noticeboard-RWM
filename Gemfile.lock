@@ -33,6 +33,9 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -114,6 +117,7 @@ GEM
     rake (10.0.2)
     rdoc (3.12)
       json (~> 1.4)
+    rmagick (2.13.2)
     sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -142,6 +146,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
   geocoder
@@ -151,6 +156,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   rails (= 3.2.9)
+  rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

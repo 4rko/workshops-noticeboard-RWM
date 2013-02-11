@@ -48,3 +48,6 @@ gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'rmagick'

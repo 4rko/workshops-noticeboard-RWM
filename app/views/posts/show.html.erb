@@ -1,6 +1,10 @@
 <% title "Post" %>
 
 <p>
+  <%= image_tag @post.image_url(:thumb) if @post.image? %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
